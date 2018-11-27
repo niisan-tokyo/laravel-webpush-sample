@@ -26,7 +26,7 @@ const WebPush = {
 
     if (event.data) {
       event.waitUntil(
-        this.sendNotification(event.data.json())
+        this.showNotification(event.data.json())
       )
     }
   },
@@ -53,10 +53,10 @@ const WebPush = {
   },
 
   /**
-   * send request to server to dismiss a notification
+   * show notification on display
    * @param {PushMessageData|Object} data 
    */
-  sendNotification(data) {
+  showNotification(data) {
     return self.registration.showNotification(data.title, data)
   },
 }
