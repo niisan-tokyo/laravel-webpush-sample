@@ -21,6 +21,8 @@ docker-compose up -d nginx
 docker-compose run --rm workspace
 # 設定をする
 composer install
+cp .env.example .env
+php artisan key:generate
 php artisan migrate
 php artisan webpush:vapid
 # ワークスペースを終了する
