@@ -9,6 +9,7 @@ RUN apk add --update --no-cache --virtual .build_deps unzip zlib-dev gmp-dev $PH
 RUN curl -sS https://getcomposer.org/installer | php; mv composer.phar /usr/local/bin/composer ; mkdir /var/dev
 
 RUN curl -L -o /usr/bin/phpmd http://static.phpmd.org/php/latest/phpmd.phar && chmod +x /usr/bin/phpmd
+RUN composer global require hirak/prestissimo
 RUN mkdir /var/www
 
 WORKDIR /var/www
